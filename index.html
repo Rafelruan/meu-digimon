@@ -1,29 +1,60 @@
+
 <!DOCTYPE html>
-<html lang="pt -BR">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digimon de mesa</title>
 </head>
 <body>
-   <h1>Meu Digimon</h1> 
-   <p>Ola eu sou um Digimon</p>
-   <p>Fome:<span id="fome"> 50 </span></p>
-   <p>Energia: <span id="energia">100 </span></p>
-    
-   <button ondblclick="alimentar()"></button>
+
+    <h1>Meu Digimon Digital</h1>
+
+    <p>Olá! Eu sou um Digimon.</p>
+
+    <p>Fome: <span id="fome">50</span></p>
+    <p>Energia: <span id="energia">100</span></p>
+
+    <button onclick="alimentar()">Alimentar</button>
+    <button onclick="descansar()">Descansar</button>
+    <button onclick="treinar()">Treinar</button>
 
     <script>
         let fome = 50;
         let energia = 100;
 
-        function alimentar (){
+        function alimentar() {
             fome = fome - 10;
-            if (fome < 0){
+
+            if (fome < 0) {
                 fome = 0;
             }
-        document.getElementById("fome").textContent = fome;    
+
+            document.getElementById("fome").textContent = fome;
         }
+        
+function treinar() {
+    energia = energia - 20;
+    fome = fome + 10;
+
+    if (energia < 0) {
+        energia = 0;
+    }
+
+    document.getElementById("energia").textContent = energia;
+ document.getElementById("fome").textContent = fome;
+        }
+
+        function descansar() {
+            energia = energia + 20;
+
+            if (energia > 100) {
+                energia = 100;
+            }
+
+            document.getElementById("energia").textContent = energia;
+        }
+
     </script>
 
 </body>
