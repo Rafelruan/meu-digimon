@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt -BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digimon de mesa</title>
+</head>
+<body>
+   <h1>Meu Digimon</h1> 
+   <p>Ola eu sou um Digimon</p>
+   <p>Fome:<span id="fome"> 50 </span></p>
+   <p>Energia: <span id="energia">100 </span></p>
+    
+   <button ondblclick="alimentar()"></button>
+
+    <script>
+        let fome = 50;
+        let energia = 100;
+
+        function alimentar (){
+            fome = fome - 10;
+            if (fome < 0){
+                fome = 0;
+            }
+        document.getElementById("fome").textContent = fome;    
+        }
+    </script>
+
+</body>
+</html>
